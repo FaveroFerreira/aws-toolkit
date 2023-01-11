@@ -1,0 +1,13 @@
+services:
+  aws:
+    image: "localstack/localstack"
+    container_name: aws
+    ports:
+      - "4566:4566"
+      - "4571:4571"
+      - "8081:8081"
+    environment:
+      - "SERVICES=sns,sqs"
+      - "DEBUG=true"
+      - "DEFAULT_REGION=us-east-1"
+      - "PORT_WEB_UI=8081"
